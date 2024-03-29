@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:audio_session/audio_session.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'state/inherited_chat_theme.dart';
@@ -62,10 +63,36 @@ class AudioRecorderState extends State<AudioRecorder> {
   }
 
   Future<void> _initAudioRecorder() async {
+    if (Platform.isIOS) {
+      final session = await AudioSession.instance;
+      await session.configure(AudioSessionConfiguration(
+        avAudioSessionCategory: AVAudioSessionCategory.playAndRecord,
+        avAudioSessionCategoryOptions:
+            AVAudioSessionCategoryOptions.allowBluetooth |
+                AVAudioSessionCategoryOptions.defaultToSpeaker,
+        avAudioSessionMode: AVAudioSessionMode.spokenAudio,
+        avAudioSessionRouteSharingPolicy:
+            AVAudioSessionRouteSharingPolicy.defaultPolicy,
+        avAudioSessionSetActiveOptions: AVAudioSessionSetActiveOptions.none,
+        androidAudioAttributes: const AndroidAudioAttributes(
+          contentType: AndroidAudioContentType.speech,
+          flags: AndroidAudioFlags.none,
+          usage: AndroidAudioUsage.voiceCommunication,
+        ),
+        androidAudioFocusGainType: AndroidAudioFocusGainType.gain,
+        androidWillPauseWhenDucked: true,
+      ));
+    }
+
     await _audioRecorder.openRecorder();
     setState(() {
       _audioRecorderReady = true;
     });
+
+    await _audioRecorder.setSubscriptionDuration(
+      const Duration(milliseconds: 50),
+    );
+
     _startRecording();
   }
 
@@ -104,9 +131,7 @@ class AudioRecorderState extends State<AudioRecorder> {
       _recordingCodec = Codec.aacADTS;
       _recordingMimeType = 'audio/aac';
     }
-    await _audioRecorder.setSubscriptionDuration(
-      const Duration(milliseconds: 50),
-    );
+
     await _audioRecorder.startRecorder(
       toFile: filePath,
       bitRate: 32000,
