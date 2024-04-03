@@ -32,6 +32,8 @@ dependencies:
   video_player: ^2.2.5
   camera: ^0.10.4
   shared_preferences: ^2.1.0
+  audio_session: ^0.1.18
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   dart_code_metrics: ^4.21.3
@@ -80,3 +82,11 @@ flutter:
     - packages/flutter_chat_ui/assets/3.0x/icon-send.png
     - packages/flutter_chat_ui/assets/3.0x/icon-x.png
     - packages/flutter_chat_ui/assets/3.0x/icon-seen-2.png
+
+  fonts:
+    - family: Helvetica
+      fonts:
+        - asset: lib/assets/fonts/Helvetica.ttf
+        - asset: lib/assets/fonts/Helvetica-Bold.ttf
+        - asset: lib/assets/fonts/Helvetica-BoldOblique.ttf
+          
