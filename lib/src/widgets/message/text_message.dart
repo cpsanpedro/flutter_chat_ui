@@ -182,15 +182,22 @@ class TextMessage extends StatelessWidget {
               ),
         if (enlargeEmojis)
           if (options.isTextSelectable)
-            SelectableText(message.text, style: emojiTextStyle)
+            SelectableText(
+              message.text,
+              style: emojiTextStyle.copyWith(fontFamily: 'Helvetica'),
+            )
           else
-            Text(message.text, style: emojiTextStyle)
+            Text(
+              message.text,
+              style: emojiTextStyle.copyWith(fontFamily: 'Helvetica'),
+            )
         else
           TextMessageText(
-            bodyLinkTextStyle: bodyLinkTextStyle,
-            bodyTextStyle: bodyTextStyle,
-            boldTextStyle: boldTextStyle,
-            codeTextStyle: codeTextStyle,
+            bodyLinkTextStyle:
+                bodyLinkTextStyle!.copyWith(fontFamily: 'Helvetica'),
+            bodyTextStyle: bodyTextStyle.copyWith(fontFamily: 'Helvetica'),
+            boldTextStyle: boldTextStyle!.copyWith(fontFamily: 'Helvetica'),
+            codeTextStyle: codeTextStyle!.copyWith(fontFamily: 'Helvetica'),
             options: options,
             text: message.text,
             useWidgetWrap: useWidgetWrap,

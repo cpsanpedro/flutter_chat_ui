@@ -174,6 +174,9 @@ class _InputMessageState extends State<InputMessage> {
         !(await widget.onStartVideoRecording!())) {
       return;
     }
+    if (!context.mounted) {
+      return;
+    }
     final inheritedReply = InheritedRepliedMessage.of(context);
 
     final l10n = InheritedL10n.of(context).l10n;
@@ -196,18 +199,17 @@ class _InputMessageState extends State<InputMessage> {
           Animation<double> animation,
           Animation<double> secondaryAnimation,
           Widget child,
-        ) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(0.0, 1.0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: FadeTransition(
-              opacity: animation,
-              child: child,
-            ), // child is the value returned by pageBuilder
-          );
-        },
+        ) =>
+            SlideTransition(
+          position: Tween<Offset>(
+            begin: const Offset(0.0, 1.0),
+            end: Offset.zero,
+          ).animate(animation),
+          child: FadeTransition(
+            opacity: animation,
+            child: child,
+          ), // child is the value returned by pageBuilder
+        ),
       ),
     );
     if (file != null) {
@@ -335,23 +337,21 @@ class _InputMessageState extends State<InputMessage> {
           );
   }
 
-  List<Widget> attachmentButton() {
-    return [
-      widget.isAttachmentUploading ?? false
-          ? const SizedBox.shrink()
-          : GestureDetector(
-              onTap: () => widget.onAttachmentPressed!(
-                      repliedMessage:
-                          InheritedRepliedMessage.of(context).repliedMessage)
-                  ?.call(),
-              child: const Icon(
-                Icons.add,
-                color: Color(0xFF0A81FF),
-                size: 25,
-              ),
-            )
-    ];
-  }
+  List<Widget> attachmentButton() => [
+        widget.isAttachmentUploading ?? false
+            ? const SizedBox.shrink()
+            : GestureDetector(
+                onTap: () => widget.onAttachmentPressed!(
+                        repliedMessage:
+                            InheritedRepliedMessage.of(context).repliedMessage)
+                    ?.call(),
+                child: const Icon(
+                  Icons.add,
+                  color: Color(0xFF0A81FF),
+                  size: 25,
+                ),
+              )
+      ];
 
   void _handleSendPressed() {
     final trimmedText = _textController.text.trim();
