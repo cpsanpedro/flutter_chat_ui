@@ -194,10 +194,10 @@ class TextMessage extends StatelessWidget {
         else
           TextMessageText(
             bodyLinkTextStyle:
-                bodyLinkTextStyle!.copyWith(fontFamily: 'Helvetica'),
+                bodyLinkTextStyle?.copyWith(fontFamily: 'Helvetica'),
             bodyTextStyle: bodyTextStyle.copyWith(fontFamily: 'Helvetica'),
-            boldTextStyle: boldTextStyle!.copyWith(fontFamily: 'Helvetica'),
-            codeTextStyle: codeTextStyle!.copyWith(fontFamily: 'Helvetica'),
+            boldTextStyle: boldTextStyle?.copyWith(fontFamily: 'Helvetica'),
+            codeTextStyle: codeTextStyle?.copyWith(fontFamily: 'Helvetica'),
             options: options,
             text: message.text,
             useWidgetWrap: useWidgetWrap,
