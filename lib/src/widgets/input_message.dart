@@ -283,7 +283,8 @@ class _InputMessageState extends State<InputMessage> {
                               textCapitalization: TextCapitalization.sentences,
                               autocorrect: true,
                               enableSuggestions: true,
-                              maxLines: null,
+                              minLines: 1,
+                              maxLines: 10,
                               decoration: InputDecoration(
                                 contentPadding: const EdgeInsets.only(left: 15),
                                 filled: true,
