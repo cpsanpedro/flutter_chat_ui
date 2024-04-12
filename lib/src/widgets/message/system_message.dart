@@ -18,8 +18,11 @@ class SystemMessage extends StatelessWidget {
         margin: InheritedChatTheme.of(context).theme.systemMessageTheme.margin,
         child: Text(
           message,
-          style:
-              InheritedChatTheme.of(context).theme.systemMessageTheme.textStyle,
+          style: InheritedChatTheme.of(context)
+              .theme
+              .systemMessageTheme
+              .textStyle
+              .copyWith(fontFamily: 'Helvetica'),
         ),
       );
 }

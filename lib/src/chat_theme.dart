@@ -406,6 +406,7 @@ class DefaultChatTheme extends ChatTheme {
     super.dateDividerTextStyle = const TextStyle(
       color: neutral2,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),
@@ -414,6 +415,7 @@ class DefaultChatTheme extends ChatTheme {
     super.emptyChatPlaceholderTextStyle = const TextStyle(
       color: neutral2,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
@@ -436,6 +438,7 @@ class DefaultChatTheme extends ChatTheme {
     super.inputTextStyle = const TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
+      fontFamily: 'Helvetica',
       height: 1.5,
     ),
     super.messageBorderRadius = 20,
@@ -449,12 +452,14 @@ class DefaultChatTheme extends ChatTheme {
     super.receivedMessageBodyTextStyle = const TextStyle(
       color: neutral0,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
     super.receivedMessageCaptionTextStyle = const TextStyle(
       color: neutral2,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
@@ -462,12 +467,14 @@ class DefaultChatTheme extends ChatTheme {
     super.receivedMessageLinkDescriptionTextStyle = const TextStyle(
       color: neutral0,
       fontSize: 14,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     super.receivedMessageLinkTitleTextStyle = const TextStyle(
       color: neutral0,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.375,
     ),
@@ -502,12 +509,14 @@ class DefaultChatTheme extends ChatTheme {
     super.sentMessageBodyTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
     super.sentMessageCaptionTextStyle = const TextStyle(
       color: neutral7With50Opacity,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
@@ -515,12 +524,14 @@ class DefaultChatTheme extends ChatTheme {
     super.sentMessageLinkDescriptionTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 14,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     super.sentMessageLinkTitleTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.375,
     ),
@@ -535,6 +546,7 @@ class DefaultChatTheme extends ChatTheme {
       textStyle: TextStyle(
         color: neutral2,
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w800,
         height: 1.333,
       ),
@@ -548,6 +560,7 @@ class DefaultChatTheme extends ChatTheme {
       countTextColor: secondary,
       multipleUserTextStyle: TextStyle(
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w500,
         color: neutral2,
       ),
@@ -557,6 +570,7 @@ class DefaultChatTheme extends ChatTheme {
       textStyle: TextStyle(
         color: neutral2,
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w500,
         height: 1.333,
       ),
@@ -566,6 +580,7 @@ class DefaultChatTheme extends ChatTheme {
     super.userAvatarTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),
@@ -578,6 +593,7 @@ class DefaultChatTheme extends ChatTheme {
     super.playButtonIcon,
     super.userNameTextStyle = const TextStyle(
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),
@@ -614,6 +630,7 @@ class DarkChatTheme extends ChatTheme {
     super.dateDividerTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),
@@ -622,6 +639,7 @@ class DarkChatTheme extends ChatTheme {
     super.emptyChatPlaceholderTextStyle = const TextStyle(
       color: neutral2,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
@@ -643,6 +661,7 @@ class DarkChatTheme extends ChatTheme {
     ),
     super.inputTextStyle = const TextStyle(
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
@@ -657,12 +676,14 @@ class DarkChatTheme extends ChatTheme {
     super.receivedMessageBodyTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
     super.receivedMessageCaptionTextStyle = const TextStyle(
       color: neutral7With50Opacity,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
@@ -670,12 +691,14 @@ class DarkChatTheme extends ChatTheme {
     super.receivedMessageLinkDescriptionTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 14,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     super.receivedMessageLinkTitleTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.375,
     ),
@@ -709,6 +732,7 @@ class DarkChatTheme extends ChatTheme {
     super.sentMessageBodyTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.5,
     ),
@@ -716,6 +740,7 @@ class DarkChatTheme extends ChatTheme {
     super.sentMessageCaptionTextStyle = const TextStyle(
       color: neutral7With50Opacity,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w500,
       height: 1.333,
     ),
@@ -723,12 +748,14 @@ class DarkChatTheme extends ChatTheme {
     super.sentMessageLinkDescriptionTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 14,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w400,
       height: 1.428,
     ),
     super.sentMessageLinkTitleTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 16,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.375,
     ),
@@ -743,6 +770,7 @@ class DarkChatTheme extends ChatTheme {
       textStyle: TextStyle(
         color: neutral7,
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w800,
         height: 1.333,
       ),
@@ -756,6 +784,7 @@ class DarkChatTheme extends ChatTheme {
       countTextColor: secondary,
       multipleUserTextStyle: TextStyle(
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w500,
         color: neutral2,
       ),
@@ -765,6 +794,7 @@ class DarkChatTheme extends ChatTheme {
       textStyle: TextStyle(
         color: neutral7WithOpacity,
         fontSize: 12,
+        fontFamily: 'Helvetica',
         fontWeight: FontWeight.w500,
         height: 1.333,
       ),
@@ -774,6 +804,7 @@ class DarkChatTheme extends ChatTheme {
     super.userAvatarTextStyle = const TextStyle(
       color: neutral7,
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),
@@ -786,6 +817,7 @@ class DarkChatTheme extends ChatTheme {
     super.playButtonIcon,
     super.userNameTextStyle = const TextStyle(
       fontSize: 12,
+      fontFamily: 'Helvetica',
       fontWeight: FontWeight.w800,
       height: 1.333,
     ),

@@ -81,3 +81,11 @@ flutter:
     - packages/flutter_chat_ui/assets/3.0x/icon-send.png
     - packages/flutter_chat_ui/assets/3.0x/icon-x.png
     - packages/flutter_chat_ui/assets/3.0x/icon-seen-2.png
+
+  fonts:
+    - family: Helvetica
+      fonts:
+        - asset: lib/assets/fonts/Helvetica.ttf
+        - asset: lib/assets/fonts/Helvetica-Bold.ttf
+        - asset: lib/assets/fonts/Helvetica-BoldOblique.ttf
+          
