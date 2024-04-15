@@ -117,7 +117,13 @@ class Chat extends StatefulWidget {
     this.bgPath,
     this.roomType = types.RoomType.direct,
     this.messageId = '',
+    required this.textController,
+    this.onTextfieldChanged,
   });
+
+  final TextEditingController textController;
+
+  final Function(String)? onTextfieldChanged;
 
   final String? bgPath;
 
@@ -730,6 +736,7 @@ class ChatState extends State<Chat> {
                               )
                             : const SizedBox.shrink(),
                         InputMessage(
+                          textController: widget.textController,
                           isOtherUserDeleted: widget.isOtherUserDeleted,
                           enableAttachments: widget.enableAttachments,
                           enableAudio: widget.enableAudio,
@@ -783,6 +790,7 @@ class ChatState extends State<Chat> {
                               repliedMessage: repliedMessage,
                             );
                           },
+                          onTextfieldChanged: widget.onTextfieldChanged,
                         ),
                       ],
                     ),

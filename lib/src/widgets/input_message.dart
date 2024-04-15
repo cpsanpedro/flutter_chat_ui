@@ -23,6 +23,8 @@ class InputMessage extends StatefulWidget {
   final bool isOtherUserDeleted;
   final bool enableAudio;
   final bool enableVideo;
+  final TextEditingController textController;
+  final Function(String)? onTextfieldChanged;
 
   /// Called right when the user presses the audio recording button
   /// And returns true if and only if audio recording is possible
@@ -53,6 +55,7 @@ class InputMessage extends StatefulWidget {
     types.Message? repliedMessage,
   })? onVideoRecorded;
 
+
   const InputMessage({
     required this.focusNode,
     this.replyMessage,
@@ -68,6 +71,8 @@ class InputMessage extends StatefulWidget {
     this.onStartAudioRecording,
     this.onVideoRecorded,
     this.onStartVideoRecording,
+    required this.textController,
+    this.onTextfieldChanged,
     Key? key,
   }) : super(key: key);
 
@@ -84,12 +89,11 @@ class _InputMessageState extends State<InputMessage> {
 
   static const inputTopRadius = Radius.circular(12);
   static const inputBottomRadius = Radius.circular(24);
-  final _textController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
-    _textController.dispose();
+    widget.textController.dispose();
   }
 
   Widget _audioWidget() {
@@ -237,7 +241,7 @@ class _InputMessageState extends State<InputMessage> {
   @override
   void initState() {
     super.initState();
-    _textController.addListener(_handleTextControllerChange);
+    widget.textController.addListener(_handleTextControllerChange);
   }
 
   @override
@@ -276,9 +280,10 @@ class _InputMessageState extends State<InputMessage> {
                           children: [
                             if (isReplying) buildReply(),
                             TextField(
+                              onChanged: widget.onTextfieldChanged,
                               keyboardType: TextInputType.multiline,
                               textInputAction: TextInputAction.newline,
-                              controller: _textController,
+                              controller: widget.textController,
                               focusNode: widget.focusNode,
                               textCapitalization: TextCapitalization.sentences,
                               autocorrect: true,
@@ -289,7 +294,7 @@ class _InputMessageState extends State<InputMessage> {
                                 contentPadding: const EdgeInsets.only(left: 15),
                                 filled: true,
                                 fillColor: Colors.grey[100],
-                                hintText: 'Type a message',
+                                hintText: 'Type a messages',
                                 hintStyle: const TextStyle(fontSize: 16),
                                 border: OutlineInputBorder(
                                   borderSide: BorderSide.none,
@@ -355,18 +360,18 @@ class _InputMessageState extends State<InputMessage> {
       ];
 
   void _handleSendPressed() {
-    final trimmedText = _textController.text.trim();
+    final trimmedText = widget.textController.text.trim();
     if (trimmedText != '') {
       final _partialText = types.PartialText(text: trimmedText);
       widget.onSendMessage(_partialText,
           repliedMessage: InheritedRepliedMessage.of(context).repliedMessage);
-      _textController.clear();
+      widget.textController.clear();
     }
   }
 
   void _handleTextControllerChange() {
     setState(() {
-      _sendButtonVisible = _textController.text != '';
+      _sendButtonVisible = widget.textController.text != '';
     });
   }
 
