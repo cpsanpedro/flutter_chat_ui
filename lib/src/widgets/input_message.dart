@@ -21,6 +21,7 @@ class InputMessage extends StatefulWidget {
   final bool? isAttachmentUploading;
   final bool enableAttachments;
   final bool isOtherUserDeleted;
+  final bool isOtherUserBlocked;
   final bool enableAudio;
   final bool enableVideo;
   final TextEditingController textController;
@@ -65,6 +66,7 @@ class InputMessage extends StatefulWidget {
     this.isAttachmentUploading,
     this.enableAttachments = true,
     this.isOtherUserDeleted = false,
+    this.isOtherUserBlocked = false,
     this.enableAudio = true,
     this.enableVideo = true,
     this.onAudioRecorded,
@@ -259,7 +261,14 @@ class _InputMessageState extends State<InputMessage> {
               ),
             ),
           )
-        : Container(
+        : widget.isOtherUserBlocked ? Padding(
+      padding: const EdgeInsets.only(bottom: 15.0),
+      child: Center(
+        child: Text(
+          'Cannot send messages to a Blocked User',
+        ),
+      ),
+    ) : Container(
             color: Colors.white,
             padding: const EdgeInsets.all(8),
             child: Row(

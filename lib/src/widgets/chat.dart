@@ -103,6 +103,7 @@ class Chat extends StatefulWidget {
     this.enableSwipe = true,
     this.enableAttachments = true,
     this.isOtherUserDeleted = false,
+    this.isOtherUserBlocked = false,
     this.enableAudio = true,
     this.enableVideo = true,
     required this.user,
@@ -398,6 +399,7 @@ class Chat extends StatefulWidget {
   final bool enableAudio;
   final bool enableVideo;
   final bool isOtherUserDeleted;
+  final bool isOtherUserBlocked;
   final void Function(types.Message)? onStartAudioVideoPlayback;
 
   @override
@@ -738,6 +740,7 @@ class ChatState extends State<Chat> {
                         InputMessage(
                           textController: widget.textController,
                           isOtherUserDeleted: widget.isOtherUserDeleted,
+                          isOtherUserBlocked: widget.isOtherUserBlocked,
                           enableAttachments: widget.enableAttachments,
                           enableAudio: widget.enableAudio,
                           enableVideo: widget.enableVideo,
