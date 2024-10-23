@@ -531,7 +531,7 @@ class Message extends StatelessWidget {
                 usePreviewData: usePreviewData,
                 userAgent: userAgent,
                 useWidgetWrap: true,
-                widgetWrapWidthExtent: messageWidth.toDouble() * 0.6,
+                widgetWrapWidthExtent: messageWidth.toDouble(),
                 showUserNameForRepliedMessage: showUserNameForRepliedMessage,
               );
       case types.MessageType.video:
