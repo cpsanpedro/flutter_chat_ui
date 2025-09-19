@@ -1,73 +1,67 @@
-<br>
+# [Flyer Chat](https://flyer.chat) 💬
 
-<p align="center">
-  <a href="https://flyer.chat">
-    <img src="https://flyer.chat/assets/logo-dark.svg" width="288px" alt="Flyer Chat Logo" />
-  </a>
-</p>
+[![Ship faster with a go-to chat SDK for Flutter](banner.png)](https://flyer.chat/docs/flutter/introduction/)
 
-<h1 align="center">Flutter Chat UI</h1>
+[![Pub Version](https://img.shields.io/pub/v/flutter_chat_ui?logo=flutter&color=orange)](https://pub.dev/packages/flutter_chat_ui) [![Pub Likes](https://img.shields.io/pub/likes/flutter_chat_ui?logo=flutter&color=orange&label=pub%20likes)](https://pub.dev/packages/flutter_chat_ui) [![Stars](https://img.shields.io/github/stars/flyerhq/flutter_chat_ui?style=flat&color=orange&logo=github)](https://github.com/flyerhq/flutter_chat_ui/stargazers) [![melos](https://img.shields.io/badge/maintained%20with-melos-ffffff.svg?color=orange)](https://github.com/invertase/melos)
 
-<p align="center">
-  Actively maintained, community-driven chat UI implementation with an optional <a href="https://pub.dev/packages/flutter_firebase_chat_core">Firebase BaaS</a>.
-</p>
+Flyer Chat is an open-source chat UI package for Flutter applications, designed for performance, customization, and ease of integration.
 
-<br>
+## ✨ Features
 
-<p align="center">
-  🇺🇦🇺🇦 We are Ukrainians. If you enjoy our work, please <a href="https://u24.gov.ua">consider donating</a> to help save our country. 🇺🇦🇺🇦
-</p>
+- 🔄 **Backend-agnostic**: Connect to any backend service.
+- 🧬 **Adaptable**: Perfect for real-time messengers, generative AI agents and LLM-based assistants, support platforms, and beyond.
+- 🎨 **Highly Customizable**: Tailor the UI with extensive theme options and builder functions.
+- 🧩 **Modular**: Pick and choose the features you want. You can change any part of the UI or swap it with your own custom implementation.
+- ⚡ **Performance Optimized**: Built for speed and smooth animations.
+- 🌐 **Cross-Platform**: Supports iOS, Android, Web, macOS, Windows, and Linux.
+- 📜 **Open Source**: Free to use under the Apache 2.0 License.
 
-<br>
+## 🚀 Installation
 
-<p align="center">
-  <a href="https://pub.dartlang.org/packages/flutter_chat_ui">
-    <img alt="Pub" src="https://img.shields.io/pub/v/flutter_chat_ui" />
-  </a>
-  <a href="https://github.com/flyerhq/flutter_chat_ui/actions?query=workflow%3Abuild">
-    <img alt="Build Status" src="https://github.com/flyerhq/flutter_chat_ui/workflows/build/badge.svg" />
-  </a>
-  <a href="https://www.codefactor.io/repository/github/flyerhq/flutter_chat_ui">
-    <img alt="CodeFactor" src="https://www.codefactor.io/repository/github/flyerhq/flutter_chat_ui/badge" />
-  </a>
-</p>
+Add the package to your `pubspec.yaml`:
 
-<br>
+```yaml
+dependencies:
+  flutter_chat_core: ^2.0.0
+  flutter_chat_ui: ^2.0.0
+```
 
-<p align="center">
-  <a href="https://flyer.chat">
-    <img alt="Chat Image" src="https://user-images.githubusercontent.com/14123304/193468140-91942302-2332-4cb1-8504-61b8892d828b.jpg" />
-  </a>
-</p>
+Then, import and use the `Chat` widget.
 
-<br>
+## 📚 Documentation & Examples
 
-Flyer Chat is a platform for creating in-app chat experiences using Flutter or [React Native](https://github.com/flyerhq/react-native-chat-ui). This repository contains chat UI implementation for Flutter.
+For detailed usage, customization options, different message types, controllers, and more complex scenarios, please refer to the **full documentation**:
 
-* **Free, open-source and community-driven**. We offer no paid plugins and strive to create an easy-to-use, almost drop-in chat experience for any application. Contributions are more than welcome! Please read our [Contributing Guide](CONTRIBUTING.md).
+➡️ **[flyer.chat/docs/flutter/introduction](https://flyer.chat/docs/flutter/introduction)** ⬅️
 
-* **Backend agnostic**. You can choose the backend you prefer. But if you don't have one, we provide our own free and open-source [Firebase implementation](https://pub.dev/packages/flutter_firebase_chat_core), which can be used to create a working chat in minutes. We are also working on our more advanced SaaS and self-hosted solutions.
+Explore the comprehensive [example application](https://github.com/flyerhq/flutter_chat_ui/tree/main/examples/flyer_chat) to see various features and customizations in action.
 
-* **Customizable**. Supports custom themes, locales and more. Check our [documentation](https://docs.flyer.chat/flutter/chat-ui/) for the info. More options are on the way, let us know if something is missing.
+## 📦 Packages
 
-* **Minimum dependencies**. Our packages are lightweight. Use your favourite packages for selecting images, opening files etc. See the [example](https://github.com/flyerhq/flutter_chat_ui/blob/main/example/lib/main.dart) for possible implementation.
+The project is structured as a monorepo managed by [Melos](https://melos.invertase.dev/) 💙.
 
-## Getting Started
+### Core Packages
 
-### Requirements
+These are the foundational packages included when you install `flutter_chat_ui`:
 
-`Dart >=2.18.0` and `Flutter >=2.0.0`
+- [`flutter_chat_ui`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flutter_chat_ui): The main UI package.
+- [`flutter_chat_core`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flutter_chat_core): Contains core models, controllers, theming, and utilities used across the ecosystem.
+- [`cross_cache`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/cross_cache): Provides a cross-platform (IO & Web) image caching solution.
 
-Read our [documentation](https://docs.flyer.chat/flutter/chat-ui/) or see the [example](https://github.com/flyerhq/flutter_chat_ui/tree/main/example) project.
+### Optional Message Widget Packages
 
-## Contributing
+Opinionated packages for rendering different message types. You can also build your own!
 
-Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a pull request to the project.
+- [`flyer_chat_text_message`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flyer_chat_text_message): Renders text messages with markdown support.
+- [`flyer_chat_text_stream_message`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flyer_chat_text_stream_message): Renders streamed text messages with markdown and fade-in animation support.
+- [`flyer_chat_image_message`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flyer_chat_image_message): Renders image messages.
+- [`flyer_chat_file_message`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flyer_chat_file_message): Renders file messages.
+- [`flyer_chat_system_message`](https://github.com/flyerhq/flutter_chat_ui/tree/main/packages/flyer_chat_system_message): Renders system messages (e.g., user joined).
 
-## Code of Conduct
+## 🤝 Contributing
 
-Flyer Chat has adopted the [Contributor Covenant](https://www.contributor-covenant.org) as its Code of Conduct, and we expect project participants to adhere to it. Please read [the full text](CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+Contributions are welcome! Please see [CONTRIBUTING.md](https://github.com/flyerhq/flutter_chat_ui/blob/main/CONTRIBUTING.md) for guidelines on how to contribute.
 
-## License
+## 📜 License
 
-Licensed under the [Apache License, Version 2.0](LICENSE)
+Licensed under the Apache License, Version 2.0. See the [LICENSE](https://github.com/flyerhq/flutter_chat_ui/blob/main/LICENSE) file for details.
